@@ -18,7 +18,7 @@
         <maven.annotations.version>3.6.0</maven.annotations.version>
         <maven.plugin.plugin.version>3.5</maven.plugin.plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-        <tycho.version>1.0.0</tycho.version>
+        <tycho.version>1.5.1</tycho.version>
 
         <biz.aQute.bnd.version>4.0.0</biz.aQute.bnd.version>
 
@@ -77,6 +77,12 @@
     </ciManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>sisu-equinox-launching</artifactId>
+            <version>${tycho.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
@@ -190,11 +196,7 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>org.eclipse.tycho.extras</groupId>
-            <artifactId>tycho-p2-extras-plugin</artifactId>
-            <version>${tycho.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.eclipse.tycho</groupId>
             <artifactId>tycho-packaging-plugin</artifactId>
@@ -293,8 +295,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                     <excludes>
                         <exclude>**/src/test/integration/**/*.*</exclude>
@@ -382,7 +384,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <source>1.6</source>
+                    <source>1.8</source>
                     <quiet>true</quiet>
                     <links>
                         <link>http://docs.oracle.com/javase/6/docs/api/</link>
